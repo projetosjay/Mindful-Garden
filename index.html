@@ -316,185 +316,115 @@
             color: var(--gray);
         }
 
-        /* Fortune Page */
-        .fortune-card {
-            text-align: center;
-            padding: 3rem 2rem;
-        }
-
-        .fortune-cookie {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(45deg, #deb887, #cd853f);
-            border-radius: 50%;
-            margin: 0 auto 2rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .fortune-cookie:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .fortune-message {
-            background: var(--light-green);
-            padding: 2rem;
-            border-radius: 16px;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            font-style: italic;
-            margin-top: 2rem;
-            border-left: 4px solid var(--primary-green);
-        }
-
-        /* Chat Pages */
-        .chat-container {
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            background: var(--light-gray);
-            border-radius: 16px;
-            overflow: hidden;
-        }
-
-        .chat-header {
-            background: var(--primary-green);
-            color: white;
-            padding: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .chat-messages {
-            flex: 1;
-            overflow-y: auto;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .message {
-            max-width: 70%;
-            padding: 0.75rem 1rem;
-            border-radius: 16px;
-            word-wrap: break-word;
-        }
-
-        .message.user {
-            background: var(--primary-green);
-            color: white;
-            align-self: flex-end;
-            border-bottom-right-radius: 4px;
-        }
-
-        .message.bot {
-            background: var(--white);
-            color: var(--dark-gray);
-            align-self: flex-start;
-            border-bottom-left-radius: 4px;
-            box-shadow: var(--shadow);
-        }
-
-        .message.community {
-            background: var(--accent-green);
-            color: var(--dark-gray);
-            align-self: flex-start;
-            border-bottom-left-radius: 4px;
-        }
-
-        .message-author {
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-            color: var(--secondary-green);
-        }
-
-        .chat-input {
-            display: flex;
-            padding: 1rem;
-            gap: 0.5rem;
-            background: var(--white);
-            border-top: 1px solid var(--light-green);
-        }
-
-        .chat-input input {
-            flex: 1;
-            background: var(--light-gray);
-            border: none;
-            border-radius: 25px;
-            padding: 0.75rem 1rem;
-            outline: none;
-            font-size: 0.875rem;
-        }
-
-        .send-btn {
-            background: var(--primary-green);
-            border: none;
-            color: white;
-            padding: 0.75rem 1rem;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .send-btn:hover {
-            background: var(--secondary-green);
-        }
-
-        /* Communities */
-        .communities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .community-card {
+        /* Emergency Contacts */
+        .emergency-card {
             background: var(--white);
             border-radius: 16px;
             padding: 1.5rem;
             box-shadow: var(--shadow);
-            border: 2px solid transparent;
-            transition: all 0.2s ease;
-            cursor: pointer;
+            border: 2px solid var(--primary-green);
+            margin-top: 2rem;
         }
 
-        .community-card:hover {
-            border-color: var(--primary-green);
-            transform: translateY(-4px);
-        }
-
-        .community-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        .emergency-title {
+            color: var(--dark-green);
             margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-align: center;
         }
 
-        .community-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-green);
+        .emergency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .emergency-item {
+            background: var(--light-green);
+            padding: 1rem;
             border-radius: 12px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .emergency-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .emergency-name {
+            font-weight: 600;
+            color: var(--dark-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .emergency-phone {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary-green);
+        }
+
+        /* Daily Phrase Modal */
+        .daily-phrase-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            color: white;
+            z-index: 3000;
         }
 
-        .community-stats {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-            font-size: 0.875rem;
+        .daily-phrase-content {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            position: relative;
+        }
+
+        .daily-phrase-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
             color: var(--gray);
+        }
+
+        .daily-phrase-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+        }
+
+        .daily-phrase-text {
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: var(--dark-gray);
+        }
+
+        .daily-phrase-btn {
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .daily-phrase-btn:hover {
+            background: var(--secondary-green);
+            transform: translateY(-2px);
         }
 
         /* Mobile Responsive */
@@ -631,6 +561,17 @@
     </style>
 </head>
 <body>
+    <!-- Daily Phrase Modal -->
+    <div id="dailyPhraseModal" class="daily-phrase-modal" style="display: none;">
+        <div class="daily-phrase-content">
+            <button class="daily-phrase-close" onclick="closeDailyPhraseModal()">×</button>
+            <div class="daily-phrase-icon">🌞</div>
+            <h2 style="color: var(--dark-green); margin-bottom: 1rem;">Frase do Dia</h2>
+            <div class="daily-phrase-text" id="dailyPhraseText"></div>
+            <button class="daily-phrase-btn" onclick="closeDailyPhraseModal()">Continuar</button>
+        </div>
+    </div>
+
     <!-- Login Modal -->
     <div id="loginModal" class="modal">
         <div class="modal-content">
@@ -662,10 +603,12 @@
             </div>
 
             <nav class="nav-menu">
-                <div class="nav-item active" onclick="showPage('    ')">
+                <div class="nav-item active" onclick="showPage('garden')">
                     🌱 Meu Jardim
                 </div>
-
+                <div class="nav-item" onclick="showPage('emergency')">
+                    🆘 Contatos de Emergência
+                </div>
                 <div class="nav-item" onclick="showPage('community')">
                     👥 Comunidades
                 </div>
@@ -690,6 +633,7 @@
             </div>
 
             <div class="content-area">
+                <!-- Garden Page -->
                 <div id="garden" class="page active">
                     <div class="garden-grid">
                         <div class="card">
@@ -757,7 +701,39 @@
                     </div>
                 </div>
 
-                <!-- Fortune Page -->
+                <!-- Emergency Contacts Page -->
+                <div id="emergency" class="page">
+                    <div class="card">
+                        <h2 class="emergency-title">🆘 Contatos de Emergência</h2>
+                        <p style="text-align: center; margin-bottom: 2rem;">Se você ou alguém que você conhece está em crise ou precisa de ajuda imediata, não hesite em contatar estes serviços:</p>
+
+                        <div class="emergency-grid">
+                            <div class="emergency-item">
+                                <div class="emergency-name">CVV - Centro de Valorização da Vida</div>
+                                <div class="emergency-phone">188</div>
+                                <p>Atendimento 24h para prevenção do suicídio e apoio emocional.</p>
+                            </div>
+
+                            <div class="emergency-item">
+                                <div class="emergency-name">SAMU - Serviço de Atendimento Móvel de Urgência</div>
+                                <div class="emergency-phone">192</div>
+                                <p>Atendimento médico de urgência 24 horas por dia.</p>
+                            </div>
+
+                            <div class="emergency-item">
+                                <div class="emergency-name">Polícia Militar</div>
+                                <div class="emergency-phone">190</div>
+                                <p>Para situações de emergência que requerem intervenção policial.</p>
+                            </div>
+
+                            <div class="emergency-item">
+                                <div class="emergency-name">Bombeiros</div>
+                                <div class="emergency-phone">193</div>
+                                <p>Para emergências que envolvam incêndios, resgates e acidentes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Communities Page -->
                 <div id="community" class="page">
@@ -864,6 +840,60 @@
     </div>
 
     <script>
+        // Frases do dia
+        const dailyPhrases = [
+            "A calma é a força interior que nos permite enfrentar qualquer tempestade.",
+            "Cada dia é uma nova oportunidade para crescer e florescer.",
+            "A paz começa com um sorriso.",
+            "Respire fundo. Tudo vai ficar bem.",
+            "Você é mais forte do que pensa.",
+            "A felicidade muitas vezes chega quando não estamos procurando por ela.",
+            "Cultive gratidão e colha felicidade.",
+            "A mente é como um jardim - o que você planta é o que colhe.",
+            "Você não precisa ser perfeito, apenas presente.",
+            "A jornada de mil milhas começa com um único passo.",
+            "Seja gentil consigo mesmo hoje.",
+            "A luz do sol é a melhor medicina.",
+            "A vida é 10% o que acontece com você e 90% como você reage.",
+            "A felicidade não é algo pronto. Ela vem de suas próprias ações.",
+            "O momento presente é o único momento que realmente temos.",
+            "A paz vem de dentro. Não a procure fora.",
+            "Você é o artista da sua própria vida. Não dê o pincel para ninguém.",
+            "A calma é a resposta para quase tudo.",
+            "A respiração é a ponte entre a mente e o corpo.",
+            "A gratidão transforma o que temos em suficiente.",
+            "A mente tranquila é a base de uma vida feliz.",
+            "Você é mais corajoso do que acredita, mais forte do que parece e mais inteligente do que pensa.",
+            "A felicidade não é a ausência de problemas, mas a habilidade de lidar com eles.",
+            "Cada manhã traz novas possibilidades.",
+            "A paz interior começa no momento em que você escolhe não permitir que outra pessoa ou evento controle suas emoções.",
+            "A vida é realmente simples, mas insistimos em torná-la complicada.",
+            "A felicidade é quando o que você pensa, o que você diz e o que você faz estão em harmonia.",
+            "Não se preocupe com o futuro. O futuro se preocupa consigo mesmo.",
+            "A mente é tudo. Você se torna aquilo que pensa.",
+            "A paz não pode ser mantida pela força. Ela só pode ser alcançada pelo entendimento.",
+            "A felicidade depende de nós mesmos.",
+            "A calma é a resposta para quase tudo na vida.",
+            "A respiração é a âncora que nos mantém presentes.",
+            "A gratidão é a memória do coração.",
+            "A mente tranquila é o refúgio seguro de qualquer tempestade.",
+            "Você é o céu. Tudo o mais é apenas o clima.",
+            "A paz começa quando a expectativa termina.",
+            "A felicidade não é uma estação para se chegar, mas uma maneira de viajar.",
+            "A vida é realmente simples, mas nós insistimos em torná-la complicada.",
+            "A calma é a força que nos permite enfrentar qualquer desafio.",
+            "A respiração é a ponte entre o corpo e a mente.",
+            "A gratidão transforma o comum em suficiente e o suficiente em abundância.",
+            "A mente tranquila é a base de uma vida plena.",
+            "Você é mais forte do que suas lutas e mais sábio do que seus erros.",
+            "A felicidade não é algo que você adia para o futuro; é algo que você projeta para o presente.",
+            "A paz interior começa quando você escolhe não permitir que outra pessoa ou evento controle suas emoções.",
+            "A vida é 10% o que acontece com você e 90% como você reage a isso.",
+            "A felicidade não é a ausência de problemas, mas a capacidade de lidar com eles.",
+            "Cada manhã traz novas possibilidades e novas oportunidades para crescer.",
+            "A paz interior é o caminho para uma vida plena e significativa."
+        ];
+
         // Estado global da aplicação
         let currentUser = null;
         let plantState = {
@@ -908,10 +938,24 @@
                 document.getElementById('userName').textContent = displayName;
                 document.getElementById('userAvatar').textContent = displayName.charAt(0);
                 document.getElementById('loginModal').style.display = 'none';
+
+                // Mostrar modal da frase do dia
+                showDailyPhraseModal();
+
                 updateStreak();
             } else {
                 alert('Por favor, preencha todos os campos.');
             }
+        }
+
+        function showDailyPhraseModal() {
+            const randomIndex = Math.floor(Math.random() * dailyPhrases.length);
+            document.getElementById('dailyPhraseText').textContent = dailyPhrases[randomIndex];
+            document.getElementById('dailyPhraseModal').style.display = 'flex';
+        }
+
+        function closeDailyPhraseModal() {
+            document.getElementById('dailyPhraseModal').style.display = 'none';
         }
 
         function showPage(pageId) {
@@ -1087,7 +1131,6 @@
             ];
             return levels[Math.min(level - 1, levels.length - 1)];
         }
-
 
         function joinCommunity(community) {
             document.getElementById('communityChat').style.display = 'block';
