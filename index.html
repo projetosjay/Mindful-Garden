@@ -978,43 +978,45 @@
         }
 
         function careAction(action) {
-            if (!plantState.unlockedActions.includes(action)) {
-                alert('Esta ação ainda não está disponível. Continue cuidando da sua planta para desbloquear!');
-                return;
-            }
-            switch (action) {
-                case 'water':
-                    plantState.water = Math.min(100, plantState.water + 20);
-                    plantState.evolution.waterCount++;
-                    break;
-                case 'sun':
-                    plantState.energy = Math.min(100, plantState.energy + 20);
-                    plantState.evolution.sunCount++;
-                    break;
-                case 'music':
-                    plantState.happiness = Math.min(100, plantState.happiness + 20);
-                    plantState.evolution.musicCount++;
-                    break;
-                case 'meditation':
-                    plantState.wisdom = Math.min(100, plantState.wisdom + 20);
-                    plantState.evolution.meditationCount++;
-                    break;
-                case 'fertilize':
-                    plantState.water = Math.min(100, plantState.water + 10);
-                    plantState.energy = Math.min(100, plantState.energy + 10);
-                    plantState.happiness = Math.min(100, plantState.happiness + 10);
-                    plantState.evolution.fertilizeCount++;
-                    break;
-                case 'prune':
-                    plantState.wisdom = Math.min(100, plantState.wisdom + 30);
-                    plantState.evolution.pruneCount++;
-                    break;
-            }
-            plantState.lastCared = Date.now();
-            updatePlantState();
-            checkEvolution();
-            updateStreak();
-        }
+    if (!plantState.unlockedActions.includes(action)) {
+        alert('Esta ação ainda não está disponível. Continue cuidando da sua planta para desbloquear!');
+        return;
+    }
+
+    switch (action) {
+        case 'water':
+            plantState.water = Math.min(100, plantState.water + 5); // Reduzido de 20 para 5
+            plantState.evolution.waterCount++;
+            break;
+        case 'sun':
+            plantState.energy = Math.min(100, plantState.energy + 5); // Reduzido de 20 para 5
+            plantState.evolution.sunCount++;
+            break;
+        case 'music':
+            plantState.happiness = Math.min(100, plantState.happiness + 5); // Reduzido de 20 para 5
+            plantState.evolution.musicCount++;
+            break;
+        case 'meditation':
+            plantState.wisdom = Math.min(100, plantState.wisdom + 5); // Reduzido de 20 para 5
+            plantState.evolution.meditationCount++;
+            break;
+        case 'fertilize':
+            plantState.water = Math.min(100, plantState.water + 3); // Reduzido de 10 para 3
+            plantState.energy = Math.min(100, plantState.energy + 3); // Reduzido de 10 para 3
+            plantState.happiness = Math.min(100, plantState.happiness + 3); // Reduzido de 10 para 3
+            plantState.evolution.fertilizeCount++;
+            break;
+        case 'prune':
+            plantState.wisdom = Math.min(100, plantState.wisdom + 10); // Reduzido de 30 para 10
+            plantState.evolution.pruneCount++;
+            break;
+    }
+
+    plantState.lastCared = Date.now();
+    updatePlantState();
+    checkEvolution();
+    updateStreak();
+}
 
         function updatePlantState() {
             document.getElementById('waterLevel').textContent = `${plantState.water}%`;
@@ -1042,14 +1044,24 @@
         }
 
         function checkEvolution() {
-            if (plantState.stage === 'seed' && plantState.evolution.waterCount >= 5) {
-                evolvePlant('sprout');
-            } else if (plantState.stage === 'sprout' && plantState.evolution.waterCount >= 10) {
-                evolvePlant('young');
-            } else if (plantState.stage === 'young' && plantState.evolution.waterCount >= 15) {
-                evolvePlant('mature');
-            }
-        }
+    if (plantState.stage === 'seed' && plantState.evolution.waterCount >= 10) { // Aumentado de 5 para 10
+        evolvePlant('sprout');
+    } else if (plantState.stage === 'sprout' && plantState.evolution.waterCount >= 20) { // Aumentado de 10 para 20
+        evolvePlant('young');
+    } else if (plantState.stage === 'young' && plantState.evolution.waterCount >= 30) { // Aumentado de 15 para 30
+        evolvePlant('mature');
+    }
+}
+
+        if (plantState.stage === 'seed' && plantState.evolution.waterCount >= 10) { // Aumentado de 5 para 10
+        evolvePlant('sprout');
+    } else if (plantState.stage === 'sprout' && plantState.evolution.waterCount >= 20) { // Aumentado de 10 para 20
+        evolvePlant('young');
+    } else if (plantState.stage === 'young' && plantState.evolution.waterCount >= 30) { // Aumentado de 15 para 30
+        evolvePlant('mature');
+    }
+}
+
 
         function evolvePlant(newStage) {
             plantState.stage = newStage;
@@ -1075,6 +1087,19 @@
         }
 
         function getNextEvolutionInfo() {
+    if (plantState.stage === 'seed') {
+        return 'Próxima Evolução: Regue 10 vezes';
+    } else if (plantState.stage === 'sprout') {
+        return 'Próxima Evolução: Regue 20 vezes';
+    } else if (plantState.stage === 'young') {
+        return 'Próxima Evolução: Regue 30 vezes';
+    } else if (plantState.stage === 'mature') {
+        return 'Sua planta está totalmente desenvolvida!';
+    } else {
+        return 'Sua planta está totalmente desenvolvida!';
+    }
+}
+
             if (plantState.stage === 'seed') {
                 return 'Próxima Evolução: Regue 5 vezes';
             } else if (plantState.stage === 'sprout') {
